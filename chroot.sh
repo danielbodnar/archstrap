@@ -2,10 +2,10 @@
 # vim:noet:
 
 # NOTE: you *will* want change these lines...
-export HOSTNAME=host
-export USER=server
+export HOSTNAME=`hostname`
+export USER=bodnar
 export PASS=password
-export TIMEZONE=Asia/Taipei
+export TIMEZONE=America/Chicago
 
 # variable from bootstrap.sh
 export ROOT_PART=$1
