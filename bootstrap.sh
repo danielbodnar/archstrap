@@ -37,7 +37,7 @@ kernel_packages=(
   #"linux-zen"
   #"linux-hardened"
   "linux-firmware"
-  #"mkinitcpio"
+  "mkinitcpio"
   #"dracut"  # may replace mkinitcpio in the future
 )
 
@@ -68,6 +68,8 @@ basic_packages=(
   #### network related ####
   "bind-tools"
   "wget"
+  "curl"
+  "wireguard-tools"
   #"netctl"
   #"inetutils"
 )
@@ -182,6 +184,9 @@ grep ntou $MIRRORALL >> $MIRRORLIST
 pacstrap /mnt base base-devel ${all_packages[@]}
 # NOTE: using relatime or noatime depends on what fs you use...
 #genfstab -U /mnt | sed -e 's/relatime/noatime/g' >> /mnt/etc/fstab
+
+# Misc packages
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 SCRIPT_DIR=/mnt/scripts
 mkdir -p $SCRIPT_DIR
