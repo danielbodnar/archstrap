@@ -13,7 +13,7 @@ the installation process before using it.
 4. run the following command:
 ```console
 $ zsh <(curl -SsL https://git.io/JJXcA)
-$ bash <(curl -fsSL https://git.io/JJXlB) # run inside a chroot, under your user
+$ bash <(curl -sSL https://git.io/JJXlB) # run inside a chroot, under your user
 $ # curl -L https://git.io/JJXcs | tar -xz --strip-component=1
 $ # vim bootstrap.sh # set the variables and modify packages to what you need.
 $ # vim chroot.sh # set the variables to what you need.
