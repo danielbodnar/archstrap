@@ -168,8 +168,10 @@ all_packages=(
   ${base_packages[@]}
 )
 
-MIRRORLIST=/etc/pacman.d/mirrorlist
-MIRRORALL=/etc/pacman.d/mirrorlist.all
+pacman -Sy
+
+#MIRRORLIST=/etc/pacman.d/mirrorlist
+#MIRRORALL=/etc/pacman.d/mirrorlist.all
 #mv $MIRRORLIST $MIRRORALL
 # NOTE: these are mirrors in Taiwan, you may want to change these lines
 #grep tku $MIRRORALL >> $MIRRORLIST
@@ -178,9 +180,12 @@ MIRRORALL=/etc/pacman.d/mirrorlist.all
 #grep ntou $MIRRORALL >> $MIRRORLIST
 
 # NOTE: if you don't want to install base-devel, then you can remove it.
+
+
 pacstrap /mnt base base-devel ${all_packages[@]}
 # NOTE: using relatime or noatime depends on what fs you use...
-genfstab -U /mnt | sed -e 's/relatime/noatime/g' >> /mnt/etc/fstab
+mv /mnt/etc/fstab /mnt/etc/fstab.bak.`date +'%F_%H_%M'`
+genfstab -U /mnt | sed -e 's/relatime/noatime/g' > /mnt/etc/fstab
 
 # Misc packages
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

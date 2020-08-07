@@ -16,3 +16,5 @@ clean-chroot-manager
 mbuffer
 goreplay-bin
 teleport
+
+downgrade
