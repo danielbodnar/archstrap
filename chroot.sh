@@ -80,6 +80,7 @@ sed -i 's/# \(%wheel ALL=(ALL) NOPASSWD: ALL\)/\1/' /etc/sudoers
 
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/DanielBodnar/archstrap/master/yay.sh)"
 
 useradd -mG wheel -s /bin/zsh $USER
 echo "Please set a password..."

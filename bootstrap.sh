@@ -182,8 +182,11 @@ SCRIPT_DIR=/mnt/scripts
 mkdir -p $SCRIPT_DIR
 
 
-mv ./* $SCRIPT_DIR
-mv ./.* $SCRIPT_DIR
+cp ./* $SCRIPT_DIR
+cp ./.* $SCRIPT_DIR
+
+echo "Chrooting..."
+
 arch-chroot /mnt zsh /scripts/chroot.sh $ROOT_PART
 
 echo "Finished! Please unmount and reboot!"

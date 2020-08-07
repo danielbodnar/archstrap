@@ -12,7 +12,8 @@ the installation process before using it.
 3. Make sure the internet is available.
 4. run the following command:
 ```console
-$ bash <(curl -Ss https://git.io/JJXcA)
+$ zsh <(curl -SsL https://git.io/JJXcA)
+$ bash <(curl -fsSL https://git.io/JJXlB) # run inside a chroot, under your user
 $ # curl -L https://git.io/JJXcs | tar -xz --strip-component=1
 $ # vim bootstrap.sh # set the variables and modify packages to what you need.
 $ # vim chroot.sh # set the variables to what you need.
