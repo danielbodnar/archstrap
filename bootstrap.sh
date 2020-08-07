@@ -185,7 +185,7 @@ mv $MIRRORLIST $MIRRORALL
 # NOTE: if you don't want to install base-devel, then you can remove it.
 pacstrap /mnt base base-devel ${all_packages[@]}
 # NOTE: using relatime or noatime depends on what fs you use...
-#genfstab -U /mnt | sed -e 's/relatime/noatime/g' >> /mnt/etc/fstab
+genfstab -U /mnt | sed -e 's/relatime/noatime/g' >> /mnt/etc/fstab
 
 # Misc packages
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
