@@ -188,7 +188,6 @@ mv /mnt/etc/fstab /mnt/etc/fstab.bak.`date +'%F_%H_%M'`
 genfstab -U /mnt | sed -e 's/relatime/noatime/g' > /mnt/etc/fstab
 
 # Misc packages
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 SCRIPT_DIR=/mnt/scripts
 mkdir -p $SCRIPT_DIR

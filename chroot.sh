@@ -26,11 +26,8 @@ sed -i "8i 127.0.1.1\t$HOSTNAME.localdomain\t$HOSTNAME" /etc/hosts
 
 # startup daemon
 systemctl enable fstrim.timer # only need if using SSD
-systemctl enable cups-browsed # for printer
 # NOTE: if you don't want to use gnome, the following lines are useless...
 systemctl enable NetworkManager
-systemctl enable gdm
-sed -i 's/#\(WaylandEnable\)/\1/' /etc/gdm/custom.conf # disable wayland
 
 # boot loader
 bootctl install
@@ -76,11 +73,13 @@ fi
 cat > /boot/loader/loader.conf << EOF
 default	${default_kernel}
 timeout	3
-editor	0
 EOF
 
 # sudo
 sed -i 's/# \(%wheel ALL=(ALL) NOPASSWD: ALL\)/\1/' /etc/sudoers
+
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 useradd -mG wheel -s /bin/zsh $USER
 echo "Please set a password..."
