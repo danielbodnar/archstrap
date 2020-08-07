@@ -31,9 +31,9 @@ timedatectl set-ntp true
 kernel_packages=(
   "linux"
   "linux-lts"
-  "linux-zen"
   #"linux-hardened"
   "linux-firmware"
+  "linux-headers"
   "mkinitcpio"
   #"dracut"  # may replace mkinitcpio in the future
 )
@@ -49,9 +49,6 @@ fs_packages=(
 )
 
 basic_packages=(
-  "man-db"
-  "man-pages"
-  "usbutils"
   "which"
   "pacman-contrib"
   "python"
@@ -59,8 +56,6 @@ basic_packages=(
   #### editor ####
   #"gvim"
   "vim"
-  "neovim"
-  "python-pynvim"
   "xsel"
   #### network related ####
   "bind-tools"
@@ -93,15 +88,10 @@ shell_packages=(
   "zsh-syntax-highlighting"
   "exa"      # ls   replacement
   "ripgrep"  # grep replacement
-  "the_silver_searcher"
   "fd"       # find replacement
   "bat"      # cat with wings
   "jq"       # json command line parser
-  "hq"       # html command line parser
-  "thefuck"
   "tree"
-
-  "chezmoi"  # manage dotfiles
 )
 
 programming_packages=(
@@ -111,7 +101,6 @@ programming_packages=(
 )
 
 python_packages=(
-  "ipython"
   # if you want to compile following packages with intel-mkl,
   # comment out following lines and use PKGBUILDs from
   # https://github.com/leomao/arch-PKGBUILDs
@@ -134,7 +123,7 @@ printer_packages=(
 gui_packages=(
   #"gnome" "gnome-tweak-tool" "system-config-printer"
   #"materia-gtk-theme"
-  "tilix" # a great terminal emulator
+  #"tilix" # a great terminal emulator
   #"firefox"
   #"chrome-gnome-shell"
   #"gimp"
@@ -144,7 +133,7 @@ gui_packages=(
   #"ibus-rime"
 )
 font_packages=(
-  "noto-fonts" "noto-fonts-cjk" "noto-fonts-emoji"
+  #"noto-fonts" "noto-fonts-cjk" "noto-fonts-emoji"
   #"adobe-source-code-pro-fonts"
 )
 
