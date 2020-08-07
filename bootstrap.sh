@@ -175,7 +175,7 @@ all_packages=(
 
 MIRRORLIST=/etc/pacman.d/mirrorlist
 MIRRORALL=/etc/pacman.d/mirrorlist.all
-mv $MIRRORLIST $MIRRORALL
+#mv $MIRRORLIST $MIRRORALL
 # NOTE: these are mirrors in Taiwan, you may want to change these lines
 #grep tku $MIRRORALL >> $MIRRORLIST
 #grep nctu $MIRRORALL >> $MIRRORLIST
