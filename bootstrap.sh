@@ -1,10 +1,8 @@
 #! /bin/zsh -e
 # vim:noet:
 
-# NOTE: you must connect to the internet and partition your disk
-# before running this script
 
-# NOTE: you must change the following lines...
+
 ROOT_PART=/dev/sda2
 SWAP_PART=
 EFI_PART=/dev/sda1
@@ -172,6 +170,8 @@ all_packages=(
   ${printer_packages[@]}
   ${gui_packages[@]}
   ${font_packages[@]}
+  ${main_packages[@]}
+  ${base_packages[@]}
 )
 
 MIRRORLIST=/etc/pacman.d/mirrorlist
@@ -198,5 +198,4 @@ arch-chroot /mnt zsh /scripts/chroot.sh $ROOT_PART
 
 rm -r /mnt/scripts
 
-umount -R /mnt
-reboot
+echo "Finished! Please unmount and reboot!"
