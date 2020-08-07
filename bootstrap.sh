@@ -115,11 +115,6 @@ python_packages=(
   # if you want to compile following packages with intel-mkl,
   # comment out following lines and use PKGBUILDs from
   # https://github.com/leomao/arch-PKGBUILDs
-  "python-numpy" "python-scipy"
-  "python-pillow"
-  "python-scikit-learn"
-  "python-matplotlib"
-  "tk" # matplotlib need it
 )
 
 nvidia_packages=(

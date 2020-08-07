@@ -1,6 +1,5 @@
 ack
 archiso
-aterm
 atop
 autoconf
 autofs
@@ -10,12 +9,10 @@ borgmatic
 buildah
 cgrep
 chrootuid
-clean-chroot-manager
 clinfo
 cloud-init
 cmake
 crun
-distrobuilder
 dmidecode
 downgrade
 dua-cli
@@ -30,7 +27,6 @@ gcc
 git
 glances
 go
-goreplay-bin
 gpart
 gparted
 gzip
@@ -49,7 +45,6 @@ lshw
 lsof
 lxd
 make
-mbuffer
 mksyslinux
 mtools
 mtr
@@ -75,7 +70,5 @@ tmate
 tmux
 wireguard-tools
 xterm
-zenith-bin
 zip
-teleport
 tree

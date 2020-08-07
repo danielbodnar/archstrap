@@ -8,3 +8,11 @@ pwgen
 pwgen-passphrase
 rbenv
 rbenv-vars
+
+zenith-bin
+aterm
+distrobuilder
+clean-chroot-manager
+mbuffer
+goreplay-bin
+teleport
