@@ -83,8 +83,12 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 useradd -mG wheel -s /bin/zsh $USER
 echo "Please set a password..."
-passwd $USER
+#passwd $USER
 # disable root login
 #passwd -l root
+systemctl enable sshd
+#systemctl enable
 
-exit
+echo "All finished in chroot. Please create a password for \"$USER\"."
+
+#exit
