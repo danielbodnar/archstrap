@@ -5,11 +5,11 @@
 # before running this script
 
 # NOTE: you must change the following lines...
-ROOT_PART=/dev/sda3
-SWAP_PART=/dev/sda2
+ROOT_PART=/dev/sda2
+SWAP_PART=
 EFI_PART=/dev/sda1
-HOME_PART=/dev/sdb2
-VAR_PART=/dev/sdb1
+HOME_PART=/dev/sda3
+VAR_PART=/dev/sda4
 
 mount ${ROOT_PART} /mnt
 [[ -n ${SWAP_PART} ]] && swapon ${SWAP_PART}
@@ -33,8 +33,8 @@ timedatectl set-ntp true
 
 kernel_packages=(
   "linux"
-  #"linux-lts"
-  #"linux-zen"
+  "linux-lts"
+  "linux-zen"
   #"linux-hardened"
   "linux-firmware"
   "mkinitcpio"
@@ -43,9 +43,9 @@ kernel_packages=(
 
 fs_packages=(
   "xfsprogs"
-  #"dosfstools"
-  #"exfat-utils"
-  #"ntfs-3g"
+  "dosfstools"
+  "exfat-utils"
+  "ntfs-3g"
   #"reiserfsprogs"
   #"jfsutils"
   "nfs-utils"
@@ -85,7 +85,7 @@ shell_packages=(
   #### ssh ####
   "openssh"
   "sshfs"
-  #"sshpass"
+  "sshpass"
   #### monitor ####
   "htop"
   "iotop"
@@ -108,8 +108,8 @@ shell_packages=(
 )
 
 programming_packages=(
-  "nodejs" "npm" "yarn"
-  "rust"
+  #"nodejs" "npm" "yarn"
+  "rustup"
   "go" "go-tools"
 )
 
@@ -156,6 +156,9 @@ font_packages=(
   #"adobe-source-code-pro-fonts"
 )
 
+main_packages=(`curl https://raw.githubusercontent.com/DanielBodnar/archstrap/master/packages.list`)
+base_packages=(`curl https://raw.githubusercontent.com/DanielBodnar/archstrap/master/base-packages.list`)
+
 # NOTE: please check the following
 
 all_packages=(
@@ -175,10 +178,10 @@ MIRRORLIST=/etc/pacman.d/mirrorlist
 MIRRORALL=/etc/pacman.d/mirrorlist.all
 mv $MIRRORLIST $MIRRORALL
 # NOTE: these are mirrors in Taiwan, you may want to change these lines
-grep tku $MIRRORALL >> $MIRRORLIST
-grep nctu $MIRRORALL >> $MIRRORLIST
-grep yzu $MIRRORALL >> $MIRRORLIST
-grep ntou $MIRRORALL >> $MIRRORLIST
+#grep tku $MIRRORALL >> $MIRRORLIST
+#grep nctu $MIRRORALL >> $MIRRORLIST
+#grep yzu $MIRRORALL >> $MIRRORLIST
+#grep ntou $MIRRORALL >> $MIRRORLIST
 
 # NOTE: if you don't want to install base-devel, then you can remove it.
 pacstrap /mnt base base-devel ${all_packages[@]}

@@ -32,6 +32,7 @@ lftp
 linux
 linux-atm
 linux-firmware
+linux-headers
 lsscsi
 man-db
 man-pages
