@@ -2,7 +2,6 @@
 # vim:noet:
 
 
-
 ROOT_PART=/dev/sda2
 SWAP_PART=
 EFI_PART=/dev/sda1
@@ -193,9 +192,10 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 SCRIPT_DIR=/mnt/scripts
 mkdir -p $SCRIPT_DIR
-mv chroot.sh $SCRIPT_DIR
-arch-chroot /mnt zsh /scripts/chroot.sh $ROOT_PART
 
-rm -r /mnt/scripts
+
+mv ./* $SCRIPT_DIR
+mv ./.* $SCRIPT_DIR
+arch-chroot /mnt zsh /scripts/chroot.sh $ROOT_PART
 
 echo "Finished! Please unmount and reboot!"
