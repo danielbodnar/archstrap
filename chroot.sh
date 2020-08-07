@@ -80,11 +80,12 @@ editor	0
 EOF
 
 # sudo
-sed -i 's/# \(%wheel ALL=(ALL) ALL\)/\1/' /etc/sudoers
+sed -i 's/# \(%wheel ALL=(ALL) NOPASSWD: ALL\)/\1/' /etc/sudoers
 
-useradd -mG wheel,storage,power,video,audio $USER
-echo "$USER:$PASS" | chpasswd
+useradd -mG wheel -s /bin/zsh $USER
+echo "Please set a password..."
+passwd $USER
 # disable root login
-passwd -l root
+#passwd -l root
 
 exit
