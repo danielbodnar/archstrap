@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
+cd ~/
 
+[[ ! -f "`which git`" ]] && pacman -Sy  --noconfirm git;
+[[ -d "archstrap" ]] && rm -rf archstrap;
 
-pacman -Sy git
+umount -R /mnt
 
 git clone https://github.com/DanielBodnar/archstrap.git
 cd archstrap
